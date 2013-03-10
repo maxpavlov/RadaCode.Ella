@@ -1,0 +1,6 @@
+﻿@using System.Threading
+@{
+    var localizedLayoutPath = string.Format("Shared/_Layout.{0}.cshtml", Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName);
+
+    Layout = File.Exists(Request.MapPath(localizedLayoutPath)) ? localizedLayoutPath : "Shared/_Layout.cshtml";
+}
